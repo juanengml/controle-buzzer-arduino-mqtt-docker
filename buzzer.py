@@ -18,7 +18,7 @@ HOST = '192.168.101.1'
 PORT = 1883
 KEEPALIVE = 60  # in seconds
 
-topic = "getter/sensor/fadiga/0001/buzzer"
+topic = "/sensor/fadiga/0001/buzzer"
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
      console.log(msg.topic)
@@ -32,7 +32,7 @@ def on_message(client, userdata, msg):
          arduino.write(b'l')
     
 def main(): 
-  [console.log("GETTER - FADIGA - BUZZER [ ONLINE ] ") for p in range(10)]
+  [console.log("FADIGA - BUZZER [ ONLINE ] ") for p in range(10)]
   
   subscribe.callback(on_message, topic, hostname=HOST, port=PORT, keepalive=KEEPALIVE)
 
