@@ -1,6 +1,6 @@
 # Alarme Buzzer
 
-mosquitto_pub -h 192.168.1.1 -t getter/sensor/fadiga/0001/buzzer -m 1
+mosquitto_pub -h 192.168.101.1 -t /sensor/fadiga/0001/buzzer -m 1
 
 ## Build Docker
 sudo docker build -t alarme-buzzer .
